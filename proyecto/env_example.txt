@@ -1,0 +1,7 @@
+// Example for the .env file where you will add your enviroment variables for your project
+// DON'T WRITE THE < > ON THE VALUES OF THE VARIABLES
+
+PORT = <port>
+
+MONGO_URI = <conecction string that MongoDB Atlas gives you when connecting to a cluster>
+MONGO_DBNAME = <the name of your database>
