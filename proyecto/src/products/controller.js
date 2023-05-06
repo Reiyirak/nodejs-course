@@ -43,5 +43,14 @@ module.exports.ProductsController = {
       Response.error(res);
     }
   },
+
+  generateReport: async (req, res) => {
+    try {
+      ProductsService.generateReport('Inventario', res);
+    } catch (error) {
+      debug(error);
+      Response.error(res);
+    }
+  }
 }
 

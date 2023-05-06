@@ -1,5 +1,6 @@
 const { ObjectId } = require('mongodb')
 const { Database } = require('../database/index')
+const { ProductsUtils } = require('./utils')
 
 const COLLECTION = 'products'
 
@@ -20,10 +21,16 @@ const create = async (product) => {
   return result.insertedId
 }
 
+const generateReport = async (name, res) => {
+  let products = await getAll();
+  ProductsUtils.excelGenerator(products, name, res);
+}
+
+// The key will be the function name and the value will be the result obtained from the function
 module.exports.ProductsService = {
-  // The key will be the function name and the value will be the result obtained from the function
   getAll,
   getById,
-  create
+  create,
+  generateReport
 }
 
