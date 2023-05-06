@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json())
 
 // Modulos
-ProductsAPI(app)
+ProductsAPI(app);
 
 app.listen(Config.port, () => {
   debug(`Servidor escuchando en el puerto ${Config.port}`)
